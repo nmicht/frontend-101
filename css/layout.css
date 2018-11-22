@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: lightblue;
+  margin: 0 10px;
+}
+
+.col3 {
+  width: calc(100% / 12 * 3 - 20px);
+}
+
+@media print {
+  .box {
+    background-color: #FFF;
+  }
+}
+
+@media (max-width: 500px) and (min-width: 800px) {
+  .box {
+    background-color: green;
+  }
+}

@@ -1,0 +1,1 @@
+Mustache.loadHtml(view, datos)
