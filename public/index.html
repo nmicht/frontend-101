@@ -53,5 +53,43 @@
 
     <script src="js/slider.js" charset="utf-8"></script>
     <script src="js/index.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      function setCookie(cookieName, cookieValue, cookieExdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (cookieExdays*24*60*60*1000));
+        var expires = "expires="+ d.toUTCString();
+        document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/;httpOnly=true";
+      }
+
+      function getCookie(cookieName) {
+        var name = cookieName + "=";
+        var ca = document.cookie.split(';');
+        for(var i = 0; i < ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0)==' ') {
+           c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+           return c.substring(name.length,c.length);
+         }
+        }
+        return "";
+      }
+
+      function checkCookie() {
+        var username=getCookie("username");
+        if (username!="") {
+         alert("Welcome again " + username);
+        } else {
+         username = prompt("Please enter your name:", "");
+         if (username != "" && username != null) {
+         setCookie("username", username, 365);
+        }
+        }
+      }
+
+      // Test to create a cookie
+      setCookie('michelle', 'unvalorrandom', 365);
+    </script>
   </body>
 </html>
