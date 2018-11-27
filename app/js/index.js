@@ -10,3 +10,11 @@ picame.addEventListener('click', async function() {
 
   console.log(data);
 })
+
+
+const buttonForm = document.getElementById('button-form');
+buttonForm.addEventListener('click', function() {
+  preventDefault();
+  form = this.parentNode;
+  api.users.create(form);
+})
